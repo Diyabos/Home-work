@@ -1,5 +1,3 @@
-import 'dart:math';
-
 /**
  Q4 
  Create a class Employee with attributes name and salary.

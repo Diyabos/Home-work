@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 /**
  Q6 
  Create a class NumberCheck with an attribute value. Add a

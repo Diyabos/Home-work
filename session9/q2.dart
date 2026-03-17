@@ -1,5 +1,3 @@
-import 'dart:vmservice_io';
-
 import 'q2shape.dart';
 
 /**

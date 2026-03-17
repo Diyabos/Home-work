@@ -12,7 +12,7 @@ import 'dart:vmservice_io';
 void main() {
   print("input number");
   String input = stdin.readLineSync()!;
-  if (input == null || input.isEmpty) {
+  if (input.isEmpty) {
     print("No input available");
     return;
   }

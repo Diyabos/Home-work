@@ -1,5 +1,3 @@
-import 'dart:vmservice_io';
-
 /**
  Q3 
  Create a class Movie with attributes title and rating. In main()
