@@ -8,6 +8,28 @@ class CustomButton extends StatefulWidget {
 }
 
 class _CustomButtonState extends State<CustomButton> {
+  int height = 170;
+  int weight = 70;
+  void calculateBMI() {
+    double heightInMeters = height / 100;
+    double bmi = weight / (heightInMeters * heightInMeters);
+
+    String result;
+
+    if (bmi < 18.5) {
+      result = "Underweight";
+    } else if (bmi < 25) {
+      result = "Normal";
+    } else if (bmi < 30) {
+      result = "Overweight";
+    } else {
+      result = "Obese";
+    }
+
+    print("BMI: ${bmi.toStringAsFixed(1)}");
+    print("Category: $result");
+  }
+
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -19,7 +41,9 @@ class _CustomButtonState extends State<CustomButton> {
             borderRadius: BorderRadius.circular(12),
           ),
         ),
-        onPressed: () {},
+        onPressed: () {
+          calculateBMI();
+        },
         child: Text('CALCULATE'),
       ),
     );
