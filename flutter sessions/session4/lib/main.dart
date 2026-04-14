@@ -10,10 +10,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: true, // shows DEBUG ribbon
-      home: TaskScreen(),
-    );
+    return MaterialApp(debugShowCheckedModeBanner: false, home: TaskScreen());
   }
 }
 
@@ -58,6 +55,7 @@ class _TaskScreenState extends State<TaskScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey[100],
+
       appBar: AppBar(
         title: Text("My Tasks"),
         backgroundColor: Colors.teal[300],
@@ -122,7 +120,6 @@ class _TaskScreenState extends State<TaskScreen> {
               },
             ),
 
-      // Bottom input bar (same but slightly cleaner)
       bottomNavigationBar: Padding(
         padding: EdgeInsets.fromLTRB(12, 8, 12, 12),
         child: Row(
@@ -147,7 +144,6 @@ class _TaskScreenState extends State<TaskScreen> {
             ),
             SizedBox(width: 10),
 
-            // ➕ Add Button
             GestureDetector(
               onTap: addTask,
               child: Container(
