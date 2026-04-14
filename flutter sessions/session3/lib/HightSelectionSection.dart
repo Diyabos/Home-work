@@ -11,52 +11,55 @@ class _HightSelectionsectionState extends State<HightSelectionsection> {
   double _hight = 180;
   @override
   Widget build(BuildContext context) {
-    return CustomBackGroundContainer(
-      width: double.infinity,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisAlignment: MainAxisAlignment.center,
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Text(
-            'HEIGHT',
-            style: TextStyle(fontSize: 18, color: Color(0xff8a8a96)),
-          ),
-          Row(
-            textBaseline: TextBaseline.alphabetic,
-            crossAxisAlignment: CrossAxisAlignment.baseline,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                _hight.round().toString(),
-                style: TextStyle(
-                  fontSize: 60,
-                  fontWeight: FontWeight.w500,
-                  color: Colors.white,
-                  height: 1,
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 8),
+      child: CustomBackGroundContainer(
+        width: double.infinity,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Text(
+              'HEIGHT',
+              style: TextStyle(fontSize: 18, color: Color(0xff8a8a96)),
+            ),
+            Row(
+              textBaseline: TextBaseline.alphabetic,
+              crossAxisAlignment: CrossAxisAlignment.baseline,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  _hight.round().toString(),
+                  style: TextStyle(
+                    fontSize: 60,
+                    fontWeight: FontWeight.w500,
+                    color: Colors.white,
+                    height: 1,
+                  ),
+                ),
+                Text('cm'),
+              ],
+            ),
+            Expanded(
+              child: SliderTheme(
+                data: SliderThemeData(trackHeight: 1),
+                child: Slider(
+                  activeColor: Colors.white,
+                  inactiveColor: Color(0xff8C8D9A),
+                  thumbColor: Color(0xffeb0d54),
+                  value: _hight,
+                  onChanged: (value) {
+                    _hight = value;
+                    setState(() {});
+                  },
+                  min: 100,
+                  max: 220,
                 ),
               ),
-              Text('cm'),
-            ],
-          ),
-          Expanded(
-            child: SliderTheme(
-              data: SliderThemeData(trackHeight: 1),
-              child: Slider(
-                activeColor: Colors.white,
-                inactiveColor: Color(0xff8C8D9A),
-                thumbColor: Color(0xffeb0d54),
-                value: _hight,
-                onChanged: (value) {
-                  _hight = value;
-                  setState(() {});
-                },
-                min: 100,
-                max: 220,
-              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
